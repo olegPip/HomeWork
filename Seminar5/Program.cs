@@ -3,7 +3,7 @@
 int  size = ReadInt("Введите размерность массива: ");
 int[] numbers = new int[size];
 
-FillArrayRandomNumber(numbers);
+
 PrintArray(numbers);
 int result = 0;
 
@@ -12,15 +12,6 @@ for (int i = 0; i < numbers.Length; i++)
     if (numbers[i] % 2 == 0)
     {
         result++;
-    }
-}
-
-
-void FillArrayRandomNumber(int[] array)
-{
-    for(int i = 0; i < array.Length; i++)
-    {
-        array[i] = new Random().Next(99, 999);
     }
 }
 
