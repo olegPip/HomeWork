@@ -1,6 +1,6 @@
 ﻿
 // Задача 1. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
-
+/*
 Console.Write("Enter the number of rows: ");
 int rows = Convert.ToInt32(Console.ReadLine());
 Console.Write("Enter the number of columns: ");
@@ -33,7 +33,7 @@ void PrintArray(double[,] array)
         Console.WriteLine("");
     }
 }
-
+*/
 
 // Задача 2. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
 
