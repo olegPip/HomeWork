@@ -43,8 +43,8 @@ Console.WriteLine();
 Show2dArray(myArray);
 */
 //Задача 2. Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
-/*
 
+/*
 int[,] CreateRandom2dArray(int rows, int columns, int minVal, int maxVal)
 {
   int[,] array = new int[rows, columns];
@@ -95,12 +95,12 @@ int[,] myArray = CreateRandom2dArray(5, 6, 1, 5);
 Show2dArray(myArray);
 Console.WriteLine();
 MaxSumRow2dArray(myArray);
-
 */
 
-//Задача 3. Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 
+//Задача 3. Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 /*
+
 int[,] CreateRandom2dArray(int rows, int columns, int minVal, int maxVal)
 {
   int[,] array = new int[rows, columns];
