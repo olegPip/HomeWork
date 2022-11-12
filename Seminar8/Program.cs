@@ -137,10 +137,10 @@ int[,] MatrixMultiply(int[,] oneMatrix, int[,] twoMatrix)
   return product;
 }
 
-int[,] arrayOne = CreateRandom2dArray(2, 2, 1, 5);
+int[,] arrayOne = CreateRandom2dArray(3, 2, 1, 4);
 Show2dArray(arrayOne);
 Console.WriteLine();
-int[,] arrayTwo = CreateRandom2dArray(2, 2, 1, 5);
+int[,] arrayTwo = CreateRandom2dArray(3, 2, 1, 4);
 Show2dArray(arrayTwo);
 Console.WriteLine();
 int[,] matrixMult = MatrixMultiply(arrayOne, arrayTwo);
