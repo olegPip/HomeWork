@@ -148,3 +148,44 @@ Show2dArray(matrixMult);
 */
 //Задача 4. Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, 
 //добавляя индексы каждого элемента. Массив размером 2 x 2 x 2.
+/*
+void Show3dArray(int[,,] array3d)
+{
+  for (int x = 0; x < array3d.GetLength(0); x++)
+  {
+    for (int y = 0; y < array3d.GetLength(1); y++)
+      for (int z = 0; z < array3d.GetLength(2); z++)
+        Console.Write($"| {array3d[x, y, z]} ({x},{y},{z}) |");
+    Console.WriteLine("X");
+  }
+}
+
+int[,,] CreateRandom3dArray(int rows, int columns, int planes)
+{
+  int[,,] array3d = new int[rows, columns, planes];
+  int[] notRepeatArray = new int[rows * columns * planes];
+  if (rows * columns * planes < 100)
+    for (int x = 0; x < array3d.GetLength(0); x++)
+      for (int y = 0; y < array3d.GetLength(1); y++)
+        for (int z = 0; z < array3d.GetLength(2); z++)
+        {
+          int randomNum = 0;
+          for (int r = 0; r < notRepeatArray.Length; r++)
+          {
+            randomNum = new Random().Next(10, 100);
+            if (randomNum == notRepeatArray[r])
+              continue;
+            notRepeatArray[x + y + z] = randomNum;
+          }
+          array3d[x, y, z] = randomNum;
+        }
+  else
+    Console.WriteLine("This array is not formed");
+  return array3d;
+}
+
+
+int[,,] array3d = CreateRandom3dArray(3, 4, 3);
+Show3dArray(array3d);
+*/
+
