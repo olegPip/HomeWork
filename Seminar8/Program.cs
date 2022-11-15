@@ -1,4 +1,5 @@
 ﻿//Задача 1. Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
+
 /*
 void SortToLower2dArray(int[,] array)
 {
@@ -41,29 +42,11 @@ Show2dArray(myArray);
 SortToLower2dArray(myArray);
 Console.WriteLine();
 Show2dArray(myArray);
-*/
+/*
+
 //Задача 2. Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
 
 /*
-int[,] CreateRandom2dArray(int rows, int columns, int minVal, int maxVal)
-{
-  int[,] array = new int[rows, columns];
-  for (int i = 0; i < rows; i++)
-    for (int j = 0; j < columns; j++)
-      array[i, j] = new Random().Next(minVal, maxVal + 1);
-  return array;
-}
-
-void Show2dArray(int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
-      Console.Write(array[i, j] + " ");
-    Console.WriteLine();
-  }
-}
-
 void MaxSumRow2dArray(int[,] array)
 {
   if (array.GetLength(0) != array.GetLength(1))
@@ -95,31 +78,10 @@ int[,] myArray = CreateRandom2dArray(5, 6, 1, 5);
 Show2dArray(myArray);
 Console.WriteLine();
 MaxSumRow2dArray(myArray);
-*/
-
+/*
 
 //Задача 3. Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 /*
-
-int[,] CreateRandom2dArray(int rows, int columns, int minVal, int maxVal)
-{
-  int[,] array = new int[rows, columns];
-  for (int i = 0; i < rows; i++)
-    for (int j = 0; j < columns; j++)
-      array[i, j] = new Random().Next(minVal, maxVal + 1);
-  return array;
-}
-
-void Show2dArray(int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
-      Console.Write(array[i, j] + " ");
-    Console.WriteLine();
-  }
-}
-
 int[,] MatrixMultiply(int[,] oneMatrix, int[,] twoMatrix)
 {
   int matrix1Rows = oneMatrix.GetLength(0);
@@ -131,9 +93,7 @@ int[,] MatrixMultiply(int[,] oneMatrix, int[,] twoMatrix)
     for (int matrix1_row = 0; matrix1_row < matrix1Rows; matrix1_row++)
       for (int matrix2_col = 0; matrix2_col < matrix2Cols; matrix2_col++)
         for (int matrix1_col = 0; matrix1_col < matrix1Cols; matrix1_col++)
-          product[matrix1_row, matrix2_col] +=
-            oneMatrix[matrix1_row, matrix1_col] *
-            twoMatrix[matrix1_col, matrix2_col];
+          product[matrix1_row, matrix2_col] += oneMatrix[matrix1_row, matrix1_col] * twoMatrix[matrix1_col, matrix2_col];
   return product;
 }
 
@@ -145,9 +105,11 @@ Show2dArray(arrayTwo);
 Console.WriteLine();
 int[,] matrixMult = MatrixMultiply(arrayOne, arrayTwo);
 Show2dArray(matrixMult);
-*/
+/*
+
 //Задача 4. Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, 
 //добавляя индексы каждого элемента. Массив размером 2 x 2 x 2.
+
 /*
 void Show3dArray(int[,,] array3d)
 {
@@ -187,5 +149,45 @@ int[,,] CreateRandom3dArray(int rows, int columns, int planes)
 
 int[,,] array3d = CreateRandom3dArray(3, 4, 3);
 Show3dArray(array3d);
-*/
+/*
 
+//Задача 5.Напишите программу, которая заполнит спирально массив 4 на 4.
+/*
+void ShowSpiral(int[,] array)
+{
+  for (int i = 0; i < array.GetLength(0); i++)
+  {
+    for (int j = 0; j < array.GetLength(1); j++)
+      if (array[i, j] < 10)
+        Console.Write("0" + array[i, j] + " ");
+      else
+        Console.Write(array[i, j] + " ");
+    Console.WriteLine();
+  }
+}
+
+int[,] CreateSpiralArray(int size)
+{
+  int[,] array = new int[size, size];
+  int x = 0, y = 0;
+  int currentCount = 1;
+  while (size > 0)
+  {
+    for (int i = y; i <= y + size - 1; i++)
+      array[x, i] = currentCount++;
+    for (int j = x + 1; j <= x + size - 1; j++)
+      array[j, y + size - 1] = currentCount++;
+    for (int i = y + size - 2; i >= y; i--)
+      array[x + size - 1, i] = currentCount++;
+    for (int i = x + size - 2; i >= x + 1; i--)
+      array[i, y] = currentCount++;
+    x++;
+    y++;
+    size = size - 2;
+  }
+  return (array);
+}
+
+int[,] array = CreateSpiralArray(6);
+ShowSpiral(array);
+*/
